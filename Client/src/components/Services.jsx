@@ -1,0 +1,64 @@
+import React from 'react'
+import { BsCurrencyExchange } from "react-icons/bs";
+import { BiSearchAlt } from "react-icons/bi";
+import { GiBlackBook } from "react-icons/gi";
+
+//Card component
+const ServiceCard = ({ color, title, icon, subtitle }) => {
+  return (
+    <div className="flex md:flex-row justify-start items-start white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl mf:w-6/12 md:w-6/12">
+      <div className={`w-10 h-10 rounded-full flex justify-center items-center ${color}`}>
+        {icon}
+      </div>
+      <div className="ml-5 flex flex-col flex-1">
+        <h3 className="mt-2 text-white text-lg">
+          {title}
+        </h3>
+        <p className="mt-1 text-white text-sm md:w-9/12">
+          {subtitle}
+        </p>
+      </div>
+    </div>
+  )
+}
+
+
+function Services() {
+  return (
+    <div className="flex flex-col md:flex-row w-full justify-center items-center gradient-bg-services">
+      <div className="flex mf:flex-row flex-col items-center justify-between md:p-20 py-12 px-4">
+        <div className="flex-1 flex flex-col justify-start items-start">
+          <h1 className="text-white text-3xl sm:text-5xl py-2 text-gradient">
+            Services that we
+            <br />
+            will create
+          </h1>
+        </div>
+      </div>
+
+       {/* Services Card */}
+      <div className="flex-1 flex flex-col justify-start items-center">
+        <ServiceCard
+          color="bg-[#2952E3]"
+          title="Market Crypto prices"
+          icon={<BsCurrencyExchange fontSize={21} className="text-white" />}
+          subtitle="Daily Cryptocurrency Prices by Market prices"
+        />
+        <ServiceCard
+          color="bg-[#8945F8]"
+          title="Best exchange rates"
+          icon={<BiSearchAlt fontSize={21} className="text-white" />}
+          subtitle="Check the Best Worldwide cryptocurrencies exchanges"
+        />
+        <ServiceCard
+          color="bg-[#F84550]"
+          title="Tutorials"
+          icon={<GiBlackBook fontSize={21} className="text-white" />}
+          subtitle="Web3 tutorials. We always maintain privacy and maintain the quality of our products"
+        />
+      </div>
+    </div>
+  )
+}
+
+export default Services;
